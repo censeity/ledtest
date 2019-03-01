@@ -22,22 +22,21 @@ void loop() {
     delay(30);
     leds[i] = CRGB::Black;
     leds[(NUM_LEDS-i)] = CRGB::Black;
-  }
-  void loop() {
+    }
+  } 
   //make blue up to LED#22 with the leading one being White.
-for (int n = 22; n<NUM_LEDS;n+= 22){
-  for(int i=0; i < n; i++){
+for (int i = 22; i<NUM_LEDS;i+= 22){
+  for(int i=0; i < NUM_LEDS; i++){
     leds[i] = CRGB::Red;
     FastLED.show();
     delay(30);
     leds[i] = CRGB::Blue;
+    }
   }
-  for(int i=0;i<n;i++){
-    leds[n-i] = CRGB::Red;
+  for(int i=0;i<NUM_LEDS;i++){
+    leds[NUM_LEDS-i] = CRGB::Red;
     FastLED.show();
     delay(30);
-    leds[n-i] = CRGB::Black;
+    leds[NUM_LEDS-i] = CRGB::Black;
   }
-}
-
 }
